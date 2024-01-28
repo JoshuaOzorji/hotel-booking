@@ -2,7 +2,25 @@
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				lato: ["Lato", "sans-serif"],
+				rubik: ["Rubik", "sans-serif"],
+			},
+
+			screens: {
+				sm: "260px",
+				md: "768px",
+				lg: "1024px",
+				xl: "1280px",
+			},
+
+			colors: {
+				primary: "#003B95",
+				accent: "#edf6f9",
+				sec: "#fca311",
+			},
+		},
 	},
 	plugins: [],
 };

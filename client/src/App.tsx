@@ -5,6 +5,7 @@ import {
 	Routes,
 } from "react-router-dom";
 import Layout from "./layouts/Layout";
+import Homepage from "./components/Homepage";
 
 const App = () => {
 	return (
@@ -14,7 +15,7 @@ const App = () => {
 					path='/'
 					element={
 						<Layout>
-							<p>Home Page</p>
+							<Homepage />
 						</Layout>
 					}
 				/>

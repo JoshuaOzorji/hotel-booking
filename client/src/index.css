@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bucket {
+	@apply w-[85%] p-1 md:p-2 mx-auto transition-all delay-100;
+}
+
+.text-h1 {
+	@apply text-lg md:text-2xl;
+}
+
+.text-h2 {
+	@apply text-base md:text-lg;
+}
+
+.text-h3 {
+	@apply text-[13px] md:text-base;
+}
+
+.text-h4 {
+	@apply text-[10px] md:text-sm;
+}
+
+.hero-icon {
+	@apply w-6 h-6;
+}
+.underline-class {
+	@apply cursor-pointer hover:underline decoration-sec decoration-1 md:decoration-2 transition-all delay-200;
+}
+
+.form-focus {
+	@apply border border-white focus:outline-none focus:border-primary duration-300 transition;
+}
+
+.form-focus1 {
+	@apply border border-sec focus:outline-none focus:border-primary duration-300 transition;
+}
+
+.animate {
+	@apply transition-all duration-300;
+}

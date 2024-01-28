@@ -12,13 +12,13 @@ const Layout = ({ children }: Props) => {
 		<main>
 			<Header />
 			<Hero />
+			<div className='bucket'>
+				<div>
+					<SearchBar />
+				</div>
 
-			<div>
-				<SearchBar />
+				<div className=''>{children}</div>
 			</div>
-
-			<div className=''>{children}</div>
-
 			<Footer />
 		</main>
 	);
