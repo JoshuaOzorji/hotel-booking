@@ -25,6 +25,7 @@
 .hero-icon {
 	@apply w-6 h-6;
 }
+
 .underline-class {
 	@apply cursor-pointer hover:underline decoration-sec decoration-1 md:decoration-2 transition-all delay-200;
 }
@@ -39,4 +40,20 @@
 
 .animate {
 	@apply transition-all duration-300;
+}
+
+.register-input {
+	@apply p-2 form-focus;
+}
+
+.register-label {
+	@apply flex flex-col;
+}
+
+.button {
+	@apply border bg-secText text-accent hover:bg-primary animate px-2 py-1 rounded-lg;
+}
+
+.register-required {
+	@apply text-[10px] md:text-[12px] text-red-600;
 }

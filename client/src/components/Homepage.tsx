@@ -1,5 +1,5 @@
 const Homepage = () => {
-	return <main className='min-h-[40vh]'>Homepage</main>;
+	return <main className=''>Homepage</main>;
 };
 
 export default Homepage;

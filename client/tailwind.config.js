@@ -19,6 +19,8 @@ export default {
 				primary: "#003B95",
 				accent: "#edf6f9",
 				sec: "#fca311",
+				sec2: "#f8f9fa",
+				secText: "#262626 ",
 			},
 		},
 	},

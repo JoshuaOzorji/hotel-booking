@@ -5,7 +5,7 @@ import { MdTravelExplore } from "react-icons/md";
 
 const SearchBar = () => {
 	return (
-		<form className='-mt-8 w-full flex flex-col lg:grid lg:grid-cols-8 p-4 bg-sec rounded-lg shadow-lg lg:gap-x-2 gap-y-2 lg:gap-y-0 text-h3'>
+		<form className='-mt-8 w-full flex flex-col lg:grid lg:grid-cols-8 p-4 bg-sec rounded-lg lg:gap-x-2 gap-y-2 lg:gap-y-0 text-h3 shadow-xl'>
 			<div className='col-span-2 flex items-center bg-white p-2 space-x-3'>
 				<MdTravelExplore className='hero-icon' />
 				<input
@@ -19,14 +19,17 @@ const SearchBar = () => {
 			<div className='flex flex-col lg:flex-row  col-span-2 bg-white p-2 gap-x-2 gap-y-2'>
 				<label className='flex justify-between  items-center'>
 					<p className='w-[60%]'>Adults:</p>
-					<input type='number' className='w-[40%] text-center form-focus1' />
+					<input
+						type='number'
+						className='w-[40%] text-center form-focus1 rounded-md'
+					/>
 				</label>
 
 				<label className='flex justify-between  items-center'>
-					<p className='w-[60%'>Children:</p>
+					<p className='w-[60%]'>Children:</p>
 					<input
 						type='number'
-						className='w-[40%] text-center form-focus form-focus1'
+						className='w-[40%] text-center form-focus form-focus1 rounded-md'
 					/>
 				</label>
 			</div>

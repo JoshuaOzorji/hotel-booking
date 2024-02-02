@@ -9,15 +9,12 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
 	return (
-		<main>
+		<main className='flex flex-col min-h-screen'>
 			<Header />
 			<Hero />
-			<div className='bucket'>
-				<div>
-					<SearchBar />
-				</div>
-
-				<div className=''>{children}</div>
+			<div className='bucket flex flex-col flex-1'>
+				<SearchBar />
+				<span>{children}</span>
 			</div>
 			<Footer />
 		</main>

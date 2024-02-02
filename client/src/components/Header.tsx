@@ -3,7 +3,7 @@ import SignOutButton from "./SignOutButton";
 
 const Header = () => {
 	return (
-		<main className='bg-primary py-2 md:py-4 font-rubik border-b border-accent'>
+		<main className='bg-primary py-2 md:py-4 font-rubik border-b border-accent sticky top-0'>
 			<div className='bucket mx-auto flex flex-col md:flex-row items-center justify-between space-y-2 md:space-x-0'>
 				<span className='text-h1 text-white font-bold tracking-tight'>
 					<Link to='/'>
