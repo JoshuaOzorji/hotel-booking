@@ -57,54 +57,52 @@ const Register = () => {
 				className='flex flex-col font-lato text-h2 gap-y-2 md:gap-y-4'
 				onSubmit={onSubmit}>
 				{/* first name*/}
-				<label className='register-label'>
+				<label className='form-label'>
 					First Name{" "}
 					<input
 						type='text'
-						className='register-input'
+						className='form-input'
 						{...register("firstName", { required: "This field is required" })}
 					/>
 					{errors.firstName && (
-						<span className='register-required'>
-							{errors.firstName.message}
-						</span>
+						<span className='required-class'>{errors.firstName.message}</span>
 					)}
 				</label>
 
 				{/* last name */}
-				<label className='register-label'>
+				<label className='form-label'>
 					Last Name{" "}
 					<input
 						type='text'
-						className='register-input'
+						className='form-input'
 						{...register("lastName", { required: "This field is required" })}
 					/>
 					{errors.lastName && (
-						<span className='register-required'>{errors.lastName.message}</span>
+						<span className='required-class'>{errors.lastName.message}</span>
 					)}
 				</label>
 
 				{/* email */}
-				<label className='register-label'>
+				<label className='form-label'>
 					Email
 					<input
 						type='email'
-						className='register-input'
+						className='form-input'
 						{...register("email", {
 							required: "This field is required",
 						})}
 					/>
 					{errors.email && (
-						<span className='register-required'>{errors.email.message}</span>
+						<span className='required-class'>{errors.email.message}</span>
 					)}
 				</label>
 
 				{/* password */}
-				<label className='register-label'>
+				<label className='form-label'>
 					Password
 					<input
 						type='password'
-						className='register-input'
+						className='form-input'
 						{...register("password", {
 							required: "This field is required",
 							minLength: {
@@ -114,16 +112,16 @@ const Register = () => {
 						})}
 					/>
 					{errors.password && (
-						<span className='register-required'>{errors.password.message}</span>
+						<span className='required-class'>{errors.password.message}</span>
 					)}
 				</label>
 
 				{/* confirm password */}
-				<label className='register-label'>
+				<label className='form-label'>
 					Confirm Password
 					<input
 						type='password'
-						className='register-input'
+						className='form-input'
 						{...register("confirmPassword", {
 							validate: (val) => {
 								if (!val) {
@@ -135,7 +133,7 @@ const Register = () => {
 						})}
 					/>
 					{errors.confirmPassword && (
-						<span className='register-required'>
+						<span className='required-class'>
 							{errors.confirmPassword.message}
 						</span>
 					)}

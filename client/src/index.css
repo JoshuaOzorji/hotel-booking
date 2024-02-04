@@ -42,11 +42,11 @@
 	@apply transition-all duration-300;
 }
 
-.register-input {
+.form-input {
 	@apply p-2 form-focus;
 }
 
-.register-label {
+.form-label {
 	@apply flex flex-col;
 }
 
@@ -54,6 +54,6 @@
 	@apply border bg-secText text-accent hover:bg-primary animate px-2 py-1 rounded-lg;
 }
 
-.register-required {
+.required-class {
 	@apply text-[10px] md:text-[12px] text-red-600;
 }
