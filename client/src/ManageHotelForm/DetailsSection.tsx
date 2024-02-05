@@ -65,6 +65,7 @@ const DetailsSection = () => {
 			<label className='form-label'>
 				Price Per Night{" "}
 				<input
+					placeholder='$'
 					type='number'
 					min={1}
 					className='form-input'

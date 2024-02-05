@@ -5,6 +5,14 @@ import "dotenv/config";
 import authRoutes from "../api/routes/auth.route";
 import userRoutes from "../api/routes/users.route";
 import cookieParser from "cookie-parser";
+import myHotelRoutes from "./routes/my-hotels.route";
+import { v2 as cloudinary } from "cloudinary";
+
+cloudinary.config({
+	cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+	api_key: process.env.CLOUDINARY_API_KEY,
+	api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 mongoose.connect(process.env.MONGODB as string);
 
@@ -22,6 +30,7 @@ app.use(
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/my-hotels", myHotelRoutes);
 app.listen(7000, () => {
 	console.log("Server is running on port 7000");
 });
