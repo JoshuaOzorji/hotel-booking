@@ -4,6 +4,8 @@ import FacilitiesSection from "./FacilitiesSection";
 import GuestsSection from "./GuestsSection";
 import ImagesSection from "./ImagesSection";
 import TypeSection from "./TypeSection";
+import { HotelType } from "../../../api/shared/types";
+// import { useEffect } from "react";
 
 export type HotelFormData = {
 	name: string;
@@ -21,17 +23,25 @@ export type HotelFormData = {
 };
 
 type Props = {
+	hotel?: HotelType;
 	onSave: (hotelFormData: FormData) => void;
 	isLoading: boolean;
 };
 
-const ManageHotelForm = ({ onSave, isLoading }: Props) => {
+const ManageHotelForm = ({ onSave, isLoading, hotel }: Props) => {
 	const formMethods = useForm<HotelFormData>();
 	const { handleSubmit } = formMethods;
 
-	const onSubmit = handleSubmit((formDataJson: HotelFormData) => {
+	// useEffect(() => {
+	// 	reset(hotel);
+	// }, [hotel, reset]);
+
+	const onSubmit = handleSubmit(async (formDataJson: HotelFormData) => {
 		//create new FormData object & call our API
 		const formData = new FormData();
+		if (hotel) {
+			formData.append("hotelId", hotel._id);
+		}
 		formData.append("name", formDataJson.name);
 		formData.append("city", formDataJson.city);
 		formData.append("country", formDataJson.country);
@@ -51,8 +61,10 @@ const ManageHotelForm = ({ onSave, isLoading }: Props) => {
 		});
 
 		onSave(formData);
+
 		console.log(formData);
 	});
+
 	return (
 		<FormProvider {...formMethods}>
 			<form
@@ -68,7 +80,7 @@ const ManageHotelForm = ({ onSave, isLoading }: Props) => {
 					<GuestsSection />
 					<ImagesSection />
 				</div>
-				<span className='mx-auto'>
+				<span className='mx-auto text-h3'>
 					<button
 						disabled={isLoading}
 						type='submit'

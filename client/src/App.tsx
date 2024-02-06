@@ -11,6 +11,7 @@ import Layout2 from "./layouts/Layout2";
 import SignIn from "./pages/SignIn";
 import { useAppContext } from "./contexts/AppContext";
 import AddHotel from "./pages/AddHotel";
+import MyHotels from "./components/MyHotels";
 
 const App = () => {
 	const { isLoggedIn } = useAppContext();
@@ -52,6 +53,15 @@ const App = () => {
 								<Layout2>
 									<AddHotel />
 								</Layout2>
+							}
+						/>
+
+						<Route
+							path='/my-hotels'
+							element={
+								<Layout>
+									<MyHotels />
+								</Layout>
 							}
 						/>
 					</>

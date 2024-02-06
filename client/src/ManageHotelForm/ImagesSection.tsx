@@ -9,7 +9,7 @@ const ImagesSection = () => {
 		// setValue,
 	} = useFormContext<HotelFormData>();
 	return (
-		<main>
+		<main className='text-h3'>
 			<h2>Images</h2>
 			<div className=''>
 				<label>

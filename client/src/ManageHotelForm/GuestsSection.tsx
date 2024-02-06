@@ -9,7 +9,7 @@ const GuestsSection = () => {
 	return (
 		<main>
 			<h2>Guests</h2>
-			<div className='flex justify-between'>
+			<div className='flex flex-col md:justify-between text-h3 '>
 				<label className='form-label'>
 					Adults
 					<input
