@@ -1,3 +1,4 @@
+import { HotelType } from "../../api/shared/types";
 import { RegisterFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
 
@@ -70,4 +71,13 @@ export const addMyHotel = async (hotelFormData: FormData) => {
 };
 
 // FETCH MY HOTELS
-// export const fetchMyHotels = async ():
+export const fetchMyHotels = async (): Promise<HotelType[]> => {
+	const response = await fetch(`${API_BASE_URL}/api/my-hotels`, {
+		credentials: "include",
+	});
+
+	if (!response.ok) {
+		throw new Error("Error fetching hotels");
+	}
+	return response.json();
+};

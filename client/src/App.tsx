@@ -59,9 +59,9 @@ const App = () => {
 						<Route
 							path='/my-hotels'
 							element={
-								<Layout>
+								<Layout2>
 									<MyHotels />
-								</Layout>
+								</Layout2>
 							}
 						/>
 					</>
