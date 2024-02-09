@@ -6,7 +6,7 @@ const Header = () => {
 	const { isLoggedIn } = useAppContext();
 
 	return (
-		<main className='bg-primary py-2 md:py-4 font-rubik border-b border-accent sticky top-0 z-50'>
+		<main className='bg-primary py-2 md:py-4 font-rubik border-b border-accent sticky top-0 z-10'>
 			<div
 				className={`bucket mx-auto ${
 					isLoggedIn ? "flex flex-col" : "flex flex-row"
@@ -21,12 +21,17 @@ const Header = () => {
 				<span className='flex space-x-2 md:space-x-4 text-accent text-h4 animate'>
 					{isLoggedIn ? (
 						<>
-							<Link to='/' className='underline-class'>
+							{/* My Bookings */}
+							<Link to='/my-bookings' className='underline-class'>
 								My Bookings
 							</Link>
-							<Link to='/' className='underline-class'>
+
+							{/* My Hotels */}
+							<Link to='/my-hotels' className='underline-class'>
 								My Hotels
 							</Link>
+
+							{/* Sign Out */}
 							<span className='underline-class'>
 								<SignOutButton />
 							</span>
