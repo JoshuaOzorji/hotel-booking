@@ -4,8 +4,14 @@ import * as apiClient from "../api-client";
 import Loading from "../components/Loading";
 import { BiHotel, BiMoney, BiStar } from "react-icons/bi";
 import { BsBuilding, BsMap } from "react-icons/bs";
+import { useEffect } from "react";
 
 const MyHotels = () => {
+	// SCROLL TO TOP
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	const { data: hotelData, isLoading } = useQuery(
 		"fetchMyHotels",
 		apiClient.fetchMyHotels,

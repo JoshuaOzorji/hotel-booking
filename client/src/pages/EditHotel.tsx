@@ -3,8 +3,14 @@ import ManageHotelForm from "../ManageHotelForm/ManageHotelForm";
 import { useAppContext } from "../contexts/AppContext";
 import { useMutation, useQuery } from "react-query";
 import * as apiClient from "../api-client";
+import { useEffect } from "react";
 
 const EditHotel = () => {
+	// SCROLL TO TOP
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	const { hotelId } = useParams();
 	const { showToast } = useAppContext();
 
