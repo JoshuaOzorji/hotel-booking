@@ -32,7 +32,7 @@ const MyHotels = () => {
 				<h1 className='text-base md:text-2xl font-bold'>My Hotels</h1>
 				<Link
 					to='/add-hotel'
-					className='text-accent bg-blue-600  animate px-2 py-1 hover:bg-sec hover:text-secText text-h3'>
+					className='text-accent bg-blue-600  animate px-2 py-1 hover:bg-sec hover:text-secText text-h3 rounded-lg'>
 					Add Hotel
 				</Link>
 			</span>

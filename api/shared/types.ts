@@ -5,6 +5,18 @@ export type UserType = {
 	lastName: string;
 };
 
+export type BookingType = {
+	_id: string;
+	userId: string;
+	firstName: string;
+	lastName: string;
+	email: string;
+	adultCount: number;
+	childCount: number;
+	checkIn: Date;
+	checkOut: Date;
+	totalCost: number;
+};
 export type HotelType = {
 	_id: string;
 	userId: string;
@@ -20,4 +32,14 @@ export type HotelType = {
 	starRating: number;
 	imageUrls: string[];
 	lastUpdated: Date;
+	bookings: BookingType[];
+};
+
+export type HotelSearchResponse = {
+	data: HotelType[];
+	pagination: {
+		total: number;
+		page: number;
+		pages: number;
+	};
 };
