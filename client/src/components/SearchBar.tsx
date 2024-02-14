@@ -1,16 +1,50 @@
 import { CiSearch } from "react-icons/ci";
 import { TiDeleteOutline } from "react-icons/ti";
-
 import { MdTravelExplore } from "react-icons/md";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
+import { useSearchContext } from "../contexts/SearchContext";
+import { FormEvent, useState } from "react";
 
 const SearchBar = () => {
+	const navigate = useNavigate();
+
+	const search = useSearchContext();
+
+	const [destination, setDestination] = useState<string>(search.destination);
+	const [checkIn, setCheckIn] = useState<Date>(search.checkIn);
+	const [checkOut, setCheckOut] = useState<Date>(search.checkOut);
+	const [adultCount, setAdultCount] = useState<number>(search.adultCount);
+	const [childCount, setChildCount] = useState<number>(search.childCount);
+
+	const handleSubmit = (event: FormEvent) => {
+		event.preventDefault();
+
+		search.saveSearchValues(
+			destination,
+			checkIn,
+			checkOut,
+			adultCount,
+			childCount,
+		);
+		navigate("/search");
+	};
+	const minDate = new Date();
+	const maxDate = new Date();
+	maxDate.setFullYear(maxDate.getFullYear() + 1);
+
 	return (
-		<form className='-mt-8 w-full flex flex-col lg:grid lg:grid-cols-8 p-4 bg-sec rounded-lg lg:gap-x-2 gap-y-2 lg:gap-y-0 text-h3 shadow-xl'>
+		<form
+			onSubmit={handleSubmit}
+			className='-mt-8 w-full flex flex-col lg:grid lg:grid-cols-8 p-4 bg-sec rounded-lg lg:gap-x-2 gap-y-2 lg:gap-y-0 text-h3 shadow-xl font-lato'>
 			<div className='col-span-2 flex items-center bg-white p-2 space-x-3'>
 				<MdTravelExplore className='hero-icon' />
 				<input
 					placeholder='Where are you going?'
 					type='text'
+					value={destination}
+					onChange={(event) => setDestination(event.target.value)}
 					className='text-center w-full form-focus'
 				/>
 			</div>
@@ -21,6 +55,10 @@ const SearchBar = () => {
 					<p className='w-[60%]'>Adults:</p>
 					<input
 						type='number'
+						min={1}
+						max={20}
+						value={adultCount}
+						onChange={(event) => setAdultCount(parseInt(event.target.value))}
 						className='w-[40%] text-center form-focus1 rounded-md'
 					/>
 				</label>
@@ -29,15 +67,45 @@ const SearchBar = () => {
 					<p className='w-[60%]'>Children:</p>
 					<input
 						type='number'
+						min={0}
+						max={20}
+						value={childCount}
+						onChange={(event) => setChildCount(parseInt(event.target.value))}
 						className='w-[40%] text-center form-focus form-focus1 rounded-md'
 					/>
 				</label>
 			</div>
 
 			{/* CheckIn & CheckOut */}
-			<div className='col-span-3 flex justify-between bg-white items-center p-2'>
-				<div className='lg:w-[50%]'>CheckIn</div>
-				<div className='lg:w-[50%]'>CheckOut</div>
+			<div className='col-span-3 flex flex-col lg:flex-row justify-between bg-white items-center p-2'>
+				<div className='lg:w-[50%]'>
+					<DatePicker
+						selected={checkIn}
+						onChange={(date) => setCheckIn(date as Date)}
+						selectsStart
+						startDate={checkIn}
+						endDate={checkOut}
+						minDate={minDate}
+						maxDate={maxDate}
+						placeholderText='Check-in Date'
+						className='focus:outline-none font-lato cursor-pointer text-center'
+						wrapperClassName='min-w-full'
+					/>
+				</div>
+				<div className='lg:w-[50%]'>
+					<DatePicker
+						selected={checkOut}
+						onChange={(date) => setCheckOut(date as Date)}
+						selectsEnd // Use selectsEnd for the end date
+						startDate={checkIn}
+						endDate={checkOut}
+						minDate={checkIn} // Set the minimum date to the selected checkIn date
+						maxDate={maxDate}
+						placeholderText='Check-out Date'
+						className='focus:outline-none font-lato cursor-pointer text-center'
+						wrapperClassName='min-w-full'
+					/>
+				</div>
 			</div>
 
 			{/* search and clear */}
