@@ -4,7 +4,8 @@ export type Props = {
 	onPageChange: (page: number) => void;
 };
 
-const Pagination = () => {
+const Pagination = ({ page, pages, onPageChange }: Props) => {
+	const pageNumbers = [];
 	return <div>Pagination</div>;
 };
 
