@@ -15,8 +15,8 @@ const Search = () => {
 	const search = useSearchContext();
 	const [page, setPage] = useState<number>(1);
 	const [selectedStars, setSelectedStars] = useState<string[]>([]);
-	const [selectedHotelTypes, setSelectedHotelTypes] = useState<string>([]);
-	const [selectedFacilities, setselectedFacilities] = useState<string[]>([]);
+	const [selectedHotelTypes, setSelectedHotelTypes] = useState<string[]>([]);
+	const [selectedFacilities, setSelectedFacilities] = useState<string[]>([]);
 	const [selectedPrice, setSelectedPrice] = useState<number | undefined>();
 	const [sortOption, setSortOption] = useState<string>("");
 
@@ -54,15 +54,50 @@ const Search = () => {
 				: prevStars.filter((star) => star !== starRating),
 		);
 	};
+
+	const handleHotelTypeChange = (
+		event: React.ChangeEvent<HTMLInputElement>,
+	) => {
+		const hotelType = event.target.value;
+
+		setSelectedHotelTypes((prevHotelTypes) =>
+			event.target.checked
+				? [...prevHotelTypes, hotelType]
+				: prevHotelTypes.filter((hotel) => hotel !== hotelType),
+		);
+	};
+
+	const handleFacilityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const facility = event.target.value;
+
+		setSelectedFacilities((prevFacilities) =>
+			event.target.checked
+				? [...prevFacilities, facility]
+				: prevFacilities.filter((prevFacility) => prevFacility !== facility),
+		);
+	};
+
 	return (
 		<main className='flex flex-col md:grid md:grid-cols-5 gap-6 font-lato my-6'>
-			<div className='md:col-span-1 rounded-lg p-5 h-fit md:sticky top-28 border'>
-				<div className='space-y-5 '>
-					<h3 className='text-lg f pb-5'>Filter by:</h3>
-					<StarRatingFilter />
-					<HotelTypesFilter />
-					<FacilitiesFilter />
-					<PriceFilter />
+			<div className='md:col-span-1 rounded-lg p-5 h-fit md:sticky top-4 border'>
+				<div className='space-y-5 text-h4'>
+					<h3 className='text-h4 f pb-5'>Filter by:</h3>
+					<StarRatingFilter
+						selectedStars={selectedStars}
+						onChange={handleStarsChange}
+					/>
+					<HotelTypesFilter
+						selectedHotelTypes={selectedHotelTypes}
+						onChange={handleHotelTypeChange}
+					/>
+					<FacilitiesFilter
+						selectedFacilities={selectedFacilities}
+						onChange={handleFacilityChange}
+					/>
+					<PriceFilter
+						selectedPrice={selectedPrice}
+						onChange={(value?: number) => setSelectedPrice(value)}
+					/>
 				</div>
 			</div>
 

@@ -14,7 +14,7 @@ const HotelTypesFilter = ({ selectedHotelTypes, onChange }: Props) => {
 					<input
 						type='checkbox'
 						className='rounded'
-						value={hotelTypes}
+						value={hotelType}
 						checked={selectedHotelTypes.includes(hotelType)}
 						onChange={onChange}
 					/>
