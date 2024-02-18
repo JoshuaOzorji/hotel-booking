@@ -22,6 +22,10 @@
 	@apply text-[10px] md:text-sm;
 }
 
+.text-h5 {
+	@apply text-[9px] md:text-[12px];
+}
+
 .hero-icon {
 	@apply w-6 h-6;
 }
@@ -47,7 +51,7 @@
 }
 
 .form-label {
-	@apply flex flex-col;
+	@apply flex flex-col text-h3;
 }
 
 .button {

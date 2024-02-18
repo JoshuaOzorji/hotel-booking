@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
 	return (
-		<main className='bg-neutral-100'>
+		<main className='bg-slate-100'>
 			<section className='bucket min-h-16 border-t flex justify-between items-center'>
 				<span className='text-h3 text-white font-bold tracking-tight'>
 					<Link to='/'>

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ManageHotelForm from "../ManageHotelForm/ManageHotelForm";
 import { useAppContext } from "../contexts/AppContext";
 import { useMutation, useQuery } from "react-query";
@@ -10,7 +10,7 @@ const EditHotel = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
-
+	const navigate = useNavigate();
 	const { hotelId } = useParams();
 	const { showToast } = useAppContext();
 
@@ -23,6 +23,9 @@ const EditHotel = () => {
 	const { mutate, isLoading } = useMutation(apiClient.updateMyHotelById, {
 		onSuccess: () => {
 			showToast({ message: "Hotel updated", type: "SUCCESS" });
+			setTimeout(() => {
+				navigate("/my-hotels");
+			}, 2000);
 		},
 		onError: () => {
 			showToast({ message: "Error saving Hotel", type: "ERROR" });

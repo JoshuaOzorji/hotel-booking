@@ -110,7 +110,9 @@ const SearchBar = () => {
 
 			{/* search and clear */}
 			<div className='col-span-1 gap-x-2 flex justify-center  '>
-				<button className='w-[50%] bg-accent p-2 flex items-center justify-center hover:bg-primary hover:text-accent animate'>
+				<button
+					className='w-[50%] bg-accent p-2 flex items-center justify-center hover:bg-primary hover:text-accent animate'
+					onClick={handleSubmit}>
 					<CiSearch size={26} />
 				</button>
 				<button className='w-[50%] bg-accent p-2 mx-auto flex items-center justify-center hover:bg-red-600 hover:text-accent animate'>

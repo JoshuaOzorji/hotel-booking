@@ -41,9 +41,10 @@ const SignIn = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
+
 	return (
-		<main className='p-6 md:w-[50%] mx-auto my-6 text-secText border-x shadow-md'>
-			<h2 className='text-h1 font-rubik font-bold text-center my-6'>Sign In</h2>
+		<main className='p-10 w-[80%] md:w-[50%] mx-auto my-10 md:my-6 text-secText border-x shadow-md'>
+			<h2 className='text-h2 font-rubik font-bold text-center my-6'>Sign In</h2>
 			<form
 				className='flex flex-col font-lato text-h2 gap-y-2 md:gap-y-4'
 				onSubmit={onSubmit}>
@@ -88,8 +89,8 @@ const SignIn = () => {
 				</div>
 
 				{/* SUBMIT */}
-				<div className='mx-auto '>
-					<button type='submit' className='button'>
+				<div className='mx-auto'>
+					<button type='submit' className='button text-h3'>
 						Submit
 					</button>
 				</div>
