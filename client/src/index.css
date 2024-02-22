@@ -58,6 +58,9 @@
 	@apply border bg-secText text-accent hover:bg-primary animate px-2 py-1 rounded-lg;
 }
 
+.button2 {
+	@apply border bg-primary text-accent hover:bg-secText animate p-2 rounded-lg;
+}
 .required-class {
 	@apply text-[10px] md:text-[12px] text-red-600;
 }

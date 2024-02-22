@@ -4,7 +4,7 @@ import { HotelSearchResponse } from "../../../api/shared/types";
 import { useSearchContext } from "../contexts/SearchContext";
 import * as apiClient from "../api-client";
 import SearchResultsCard from "../components/SearchResultsCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Pagination from "../components/Pagination";
 import FacilitiesFilter from "../components/FacilitiesFilter";
 import HotelTypesFilter from "../components/HotelTypesFilter";
@@ -12,6 +12,11 @@ import StarRatingFilter from "../components/StarRatingFilter";
 import PriceFilter from "../components/PriceFilter";
 
 const Search = () => {
+	// SCROLL TO TOP
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	const search = useSearchContext();
 	const [page, setPage] = useState<number>(1);
 	const [selectedStars, setSelectedStars] = useState<string[]>([]);
@@ -105,12 +110,8 @@ const Search = () => {
 			<div className='flex flex-col gap-4 md:col-span-4 '>
 				<span className='flex justify-between items-center'>
 					<p className='text-h4 font-bold'>
-						{hotelData?.pagination.total !== undefined
-							? `${hotelData?.pagination.total} Hotels found${
-									search.destination ? ` in ${search.destination}` : ""
-							  }`
-							: "Searching..."}
-						{search.destination ? `in ${search.destination}` : ""}
+						{hotelData?.pagination.total} Hotels found
+						{search.destination ? ` in ${search.destination}` : ""}
 					</p>
 
 					<select

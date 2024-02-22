@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import ManageHotelForm from "../ManageHotelForm/ManageHotelForm";
+import ManageHotelForm from "../forms/ManageHotelForm/ManageHotelForm";
 import { useAppContext } from "../contexts/AppContext";
 import { useMutation, useQuery } from "react-query";
 import * as apiClient from "../api-client";
@@ -10,6 +10,7 @@ const EditHotel = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
+
 	const navigate = useNavigate();
 	const { hotelId } = useParams();
 	const { showToast } = useAppContext();
