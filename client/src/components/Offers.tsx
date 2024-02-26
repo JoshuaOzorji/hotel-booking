@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import image from "../../public/CTA.jpg";
+import image from "../img/CTA.jpg";
 
 const Offers = () => {
 	return (

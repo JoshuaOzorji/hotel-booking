@@ -1,4 +1,3 @@
-import React from "react";
 import { HotelType } from "../../../api/shared/types";
 
 type Props = {
