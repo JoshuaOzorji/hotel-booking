@@ -37,7 +37,7 @@ const SearchBar = () => {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className='-mt-8 w-full flex flex-col lg:grid lg:grid-cols-8 p-4 bg-sec rounded-lg lg:gap-x-2 gap-y-2 lg:gap-y-0 text-h3 shadow-xl font-lato'>
+			className='-mt-8 w-full flex flex-col lg:grid lg:grid-cols-8 p-4 bg-sec rounded-lg lg:gap-x-2 gap-y-2 lg:gap-y-0 text-h3 shadow-md font-lato'>
 			<div className='col-span-2 flex items-center bg-white p-2 space-x-3'>
 				<MdTravelExplore className='hero-icon' />
 				<input

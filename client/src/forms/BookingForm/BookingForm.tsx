@@ -79,8 +79,8 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className='flex flex-col border border-slate-300 p-4 gap-4 font-lato'>
-			<h2 className='text-h2 font-bold'>Confirm Your Details</h2>
+			className='flex flex-col border border-slate-300 p-4 gap-4 font-lato text-h3'>
+			<h2 className='text-h2 font-bold'>Confirm your details</h2>
 
 			<div className='flex flex-col md:grid grid-cols-2 gap-x-3 gap-y-2'>
 				<label className='flex form-label'>
@@ -117,27 +117,31 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
 				</label>
 			</div>
 
-			<div>
-				<h2>Your Price Summary</h2>
+			<div className='flex flex-col gap-1 bg-slate-200 p-2 rounded-lg'>
+				<h2>Price summary</h2>
 
-				<div>
-					<span>Total Cost: £{paymentIntent.totalCost.toFixed(2)}</span>
+				<div className='flex flex-col'>
+					<span className='font-bold mb-[-6px]'>
+						Total Cost: £{paymentIntent.totalCost.toFixed(2)}
+					</span>
 
-					<span>Includes taxes and charges</span>
+					<span className='text-[10px] md:text-[12px] underline'>
+						Includes taxes and charges
+					</span>
 				</div>
 			</div>
 
-			<div>
-				<h3>Payment Details</h3>
+			<div className='flex flex-col gap-1 border p-2 border-slate-300'>
+				<h3>Payment Details:</h3>
 
 				<CardElement id='payment-element' className='' />
 			</div>
 
-			<div>
+			<div className='mx-auto'>
 				<button
 					disabled={isLoading}
 					type='submit'
-					className='disabled:bg-gray-500'>
+					className='disabled:bg-gray-500 button3'>
 					{isLoading ? "Saving..." : "Confirm Booking"}
 				</button>
 			</div>

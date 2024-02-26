@@ -5,7 +5,7 @@ import {
 	Routes,
 } from "react-router-dom";
 import Layout from "./layouts/Layout";
-import Homepage from "./components/Homepage";
+import Homepage from "./pages/Homepage";
 import Register from "./pages/Register";
 import Layout2 from "./layouts/Layout2";
 import SignIn from "./pages/SignIn";

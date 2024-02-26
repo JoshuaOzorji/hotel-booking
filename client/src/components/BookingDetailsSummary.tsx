@@ -19,7 +19,7 @@ const BookingDetailsSummary = ({
 }: Props) => {
 	return (
 		<main className='flex flex-col border p-4 text-h4 font-lato gap-2 border-slate-300 shadow-sm'>
-			<h2 className='text-h2 font-bold'>Your Booking Details</h2>
+			<h2 className='text-h2 font-bold'>Your booking details</h2>
 
 			<div className='booking-label'>
 				<p className='font-bold'>Location:</p>

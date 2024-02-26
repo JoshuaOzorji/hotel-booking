@@ -109,6 +109,20 @@ export const fetchMyHotelById = async (hotelId: string): Promise<HotelType> => {
 	return response.json();
 };
 
+// FEATURED HOTELS
+export const fetchFeaturedHotels = async (): Promise<HotelType[]> => {
+	try {
+		const response = await fetch(`${API_BASE_URL}/api/hotels/featured-hotels`);
+
+		if (!response.ok) {
+			throw new Error("Error fetching featured hotels");
+		}
+		return response.json();
+	} catch (error) {
+		throw new Error("Error fetching featured hotels");
+	}
+};
+
 export const updateMyHotelById = async (hotelFormData: FormData) => {
 	const response = await fetch(
 		`${API_BASE_URL}/api/my-hotels/${hotelFormData.get("hotelId")}`,
@@ -162,7 +176,7 @@ export const searchHotels = async (
 	if (!response.ok) {
 		throw new Error("Error fetching hotels");
 	}
-	console.log(response);
+	// console.log(response);
 	return response.json();
 };
 

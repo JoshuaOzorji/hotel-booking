@@ -9,6 +9,21 @@ const stripe = new Stripe(process.env.STRIPE_API_KEY as string);
 
 const router = express.Router();
 
+router.get("/featured-hotels", async (req: Request, res: Response) => {
+	try {
+		const featuredHotels = await Hotel.find();
+		featuredHotels.sort(
+			(a, b) => b.lastUpdated.getTime() - a.lastUpdated.getTime(),
+		);
+
+		const lastFiveHotels = featuredHotels.slice(0, 4);
+
+		res.json(lastFiveHotels);
+	} catch (error) {
+		res.status(500).json({ message: "Error fetching hotels" });
+	}
+});
+
 router.post(
 	"/:hotelId/bookings/payment-intent",
 	verifyToken,
