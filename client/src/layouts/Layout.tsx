@@ -1,3 +1,4 @@
+import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -16,6 +17,7 @@ const Layout = ({ children }: Props) => {
 				<SearchBar />
 				<span>{children}</span>
 			</div>
+			<Contact />
 			<Footer />
 		</main>
 	);
