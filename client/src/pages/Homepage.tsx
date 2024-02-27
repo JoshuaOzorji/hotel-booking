@@ -8,7 +8,7 @@ const Homepage = () => {
 		window.scrollTo(0, 0);
 	}, []);
 	return (
-		<main className='my-4 flex flex-col gap-6'>
+		<main className='my-7 flex flex-col gap-6'>
 			<Offers />
 			<FeaturedHotels />
 		</main>

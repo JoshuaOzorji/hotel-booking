@@ -9,13 +9,13 @@ const Contact = () => {
 					Sign up and we'll send the best deals to you
 				</h3>
 			</div>
-			<form className='flex flex-col md:flex-row items-center gap-2 md:w-[40%] mx-auto'>
+			<form className='flex flex-col md:flex-row items-center gap-2 w-[80%] md:w-[40%] mx-auto'>
 				<input
 					type='email'
 					placeholder='Your email address'
-					className='py-2 px-4 form-focus text-secText md:w-[65%]'
+					className='py-2 px-4 form-focus text-secText w-[100%] md:w-[65%]'
 				/>
-				<button className='border bg-primary text-accent hover:bg-secText animate px-4 py-2 md:w-[35%] '>
+				<button className='border bg-primary text-accent hover:bg-secText animate px-4 py-2 w-[100%] md:w-[35%] '>
 					Subscribe
 				</button>
 			</form>
