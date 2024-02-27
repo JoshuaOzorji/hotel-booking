@@ -9,16 +9,16 @@ const Offers = () => {
 				alt='offers'
 				className='md:h-[75vh] object-contain object-center'
 			/>
-			<div className='p-6 font-lato flex flex-col'>
-				<h2 className='font-rubik text-h1 font-bold'>
+			<div className='p-6 font-lato flex flex-col gap-1'>
+				<h2 className='font-rubik text-2xl md:text-4xl font-bold'>
 					Take your longest vacation yet
 				</h2>
-				<p className='font-light text-h3'>
+				<p className='font-light text-h2'>
 					Browse properties offering long-term stays, many at reduced monthly
 					rates.
 				</p>
-				<span className='mt-2'>
-					<Link to='/search' className='button3 '>
+				<span className='mt-2 text-h2'>
+					<Link to='/search' className='button2'>
 						Find a stay
 					</Link>
 				</span>
