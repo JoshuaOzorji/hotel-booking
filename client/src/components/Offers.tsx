@@ -13,7 +13,7 @@ const Offers = () => {
 				<h2 className='font-rubik text-2xl md:text-4xl font-bold'>
 					Take your longest vacation yet
 				</h2>
-				<p className='font-light text-h2'>
+				<p className='text-h2'>
 					Browse properties offering long-term stays, many at reduced monthly
 					rates.
 				</p>
