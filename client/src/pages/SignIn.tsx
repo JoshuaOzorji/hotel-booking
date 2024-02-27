@@ -11,6 +11,11 @@ export type SignInFormData = {
 };
 
 const SignIn = () => {
+	// SCROLL TO TOP
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	const { showToast } = useAppContext();
 	const navigate = useNavigate();
 	const queryClient = useQueryClient();
@@ -37,13 +42,9 @@ const SignIn = () => {
 	const onSubmit = handleSubmit((data) => {
 		mutation.mutate(data);
 	});
-	// SCROLL TO TOP
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
 
 	return (
-		<main className='p-10 w-[80%] md:w-[50%] mx-auto my-10 md:my-6 text-secText border-x shadow-md'>
+		<main className='p-10 w-[100%] md:w-[50%] mx-auto my-10 md:my-6 text-secText border-x shadow-md'>
 			<h2 className='text-h2 font-rubik font-bold text-center my-6'>Sign In</h2>
 			<form
 				className='flex flex-col font-lato text-h2 gap-y-2 md:gap-y-4'
@@ -80,7 +81,7 @@ const SignIn = () => {
 
 				{/* OPTIONAL REGISTER */}
 				<div className='mx-auto'>
-					<span className='flex space-x-2 text-h4 items-center'>
+					<span className='flex gap-x-2 text-h4 items-center'>
 						<p>Not Registered? </p>
 						<Link to='/register' className='underline'>
 							Create an account here{" "}

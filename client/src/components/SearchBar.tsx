@@ -77,8 +77,9 @@ const SearchBar = () => {
 			</div>
 
 			{/* CheckIn & CheckOut */}
-			<div className='col-span-3 flex flex-col lg:flex-row justify-between bg-white items-center p-2'>
-				<div className='lg:w-[50%]'>
+			<div className='col-span-3 flex flex-col lg:flex-row justify-between bg-white items-center p-2 gap-2 md:gap-0'>
+				<div className='lg:w-[50%] flex items-center'>
+					<p className='md:hidden'>Check-in</p>
 					<DatePicker
 						selected={checkIn}
 						onChange={(date) => setCheckIn(date as Date)}
@@ -89,10 +90,11 @@ const SearchBar = () => {
 						maxDate={maxDate}
 						placeholderText='Check-in Date'
 						className='focus:outline-none font-lato cursor-pointer text-center'
-						wrapperClassName='min-w-full'
+						wrapperClassName=''
 					/>
 				</div>
-				<div className='lg:w-[50%]'>
+				<div className='lg:w-[50%] flex items-center'>
+					<p className='md:hidden'>Check-out</p>
 					<DatePicker
 						selected={checkOut}
 						onChange={(date) => setCheckOut(date as Date)}
@@ -103,7 +105,7 @@ const SearchBar = () => {
 						maxDate={maxDate}
 						placeholderText='Check-out Date'
 						className='focus:outline-none font-lato cursor-pointer text-center'
-						wrapperClassName='min-w-full'
+						// wrapperClassName='min-w-full'
 					/>
 				</div>
 			</div>
