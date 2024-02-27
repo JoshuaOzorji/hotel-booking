@@ -7,7 +7,7 @@ interface Props {
 
 const Layout2 = ({ children }: Props) => {
 	return (
-		<main className='flex flex-col min-h-screen bg-sec2'>
+		<main className='flex flex-col min-h-[40vh] bg-sec2'>
 			<Header />
 			<div className='bucket flex flex-col flex-1'>
 				<span>{children}</span>
