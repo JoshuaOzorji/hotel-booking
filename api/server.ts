@@ -29,10 +29,17 @@ app.use(
 	}),
 );
 
-app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/my-hotels", myHotelRoutes);
-app.use("/api/hotels", hotelRoutes);
+// PRODUCTION
+app.use("/auth", authRoutes);
+app.use("/users", userRoutes);
+app.use("/my-hotels", myHotelRoutes);
+app.use("/hotels", hotelRoutes);
+
+// DEVELOPMENT
+// app.use("/api/auth", authRoutes);
+// app.use("/api/users", userRoutes);
+// app.use("/api/my-hotels", myHotelRoutes);
+// app.use("/api/hotels", hotelRoutes);
 
 app.listen(7000, () => {
 	console.log("Server is running on port 7000");
